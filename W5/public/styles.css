@@ -1,0 +1,57 @@
+:root{
+    --deg-rotate:1000deg;
+}
+.container {
+    margin:100px auto;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    perspective: 500px;
+}
+.circle{
+    background: cadetblue;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.arrow{
+    position: absolute;
+    top: 150px;
+    left: -8%;
+    height: 80px;
+    width: 80px;
+    background: #4B0082;
+    z-index: 2;
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+}
+.start{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 215px;
+    left: 215px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background: white;
+    z-index: 2;
+}
+.pie{
+    padding-left: 20px;
+    line-height: 500px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: tomato;
+}
+.animation{
+    animation: 10s roto cubic-bezier(.17, .85, .44, .97) forwards;
+}
+@keyframes roto {
+    100% {
+       transform: rotateZ(var(--deg-rotate));
+    }
+}
